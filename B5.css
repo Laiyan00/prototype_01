@@ -1,0 +1,389 @@
+/* Palet Warna Khas GitHub Dark */
+:root {
+  --bg-dasar: #0d1117;
+  --bg-kartu: #161b22;
+  --bg-nav: #010409;
+  --garis-tepi: #30363d;
+  --teks-utama: #e6edf3;
+  --teks-sekunder: #8b949e;
+  --warna-aksen: #2f81f7;
+  --hijau-1: #0e4429;
+  --hijau-2: #006d32;
+  --hijau-3: #39d353;
+}
+
+body.tema-neon {
+  --warna-aksen: #00e5ff;
+  --hijau-1: #004d59;
+  --hijau-2: #008ca3;
+  --hijau-3: #00e5ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dasar);
+  color: var(--teks-utama);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--bg-nav);
+  border-bottom: 1px solid var(--garis-tepi);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-kiri {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.logo-gh {
+  background-color: var(--teks-utama);
+  color: var(--bg-nav);
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+.logo-gh:hover {
+  transform: rotate(360deg);
+}
+
+.nav-kanan {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-kanan a {
+  color: var(--teks-utama);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.nav-kanan a:hover {
+  color: var(--warna-aksen);
+}
+
+.btn-kecil {
+  background-color: var(--bg-kartu);
+  color: var(--teks-utama);
+  border: 1px solid var(--garis-tepi);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-kecil:hover {
+  border-color: var(--warna-aksen);
+  transform: scale(1.04);
+}
+
+/* Container 2 Kolom + Animasi Muncul Halus */
+.container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  animation: munculHalus 0.8s ease-out forwards;
+}
+
+/* Kolom Kiri: Sidebar Profil + Animasi Mengambang */
+.avatar-besar {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1b1146, var(--warna-aksen));
+  border: 2px solid var(--garis-tepi);
+  display: grid;
+  place-items: center;
+  font-size: 56px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  box-shadow: 0 0 30px #2f81f733;
+  animation: melayang 4s ease-in-out infinite;
+}
+
+.nama-lengkap {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.username {
+  color: var(--teks-sekunder);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.bio {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.btn-follow {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #21262d;
+  color: var(--teks-utama);
+  border: 1px solid var(--garis-tepi);
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-follow:hover {
+  background-color: #30363d;
+  border-color: var(--warna-aksen);
+  transform: translateY(-2px);
+}
+
+.info-tambahan {
+  font-size: 13px;
+  color: var(--teks-sekunder);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.batas-garis {
+  height: 1px;
+  background-color: var(--garis-tepi);
+  margin: 20px 0;
+}
+
+.sidebar-profil h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.daftar-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  background-color: #1f6feb26;
+  color: var(--warna-aksen);
+  border: 1px solid #1f6feb66;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  background-color: #1f6feb44;
+}
+
+/* Kolom Kanan: Proyek + Animasi Hover Kartu */
+.blok-section {
+  margin-bottom: 32px;
+}
+
+.judul-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.judul-section h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sub-judul {
+  font-size: 12px;
+  color: var(--teks-sekunder);
+}
+
+.grid-repo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.kartu-repo {
+  background-color: var(--bg-dasar);
+  border: 1px solid var(--garis-tepi);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Efek Terangkat & Pendar Saat Kursor Menyentuh Kartu Proyek */
+.kartu-repo:hover {
+  transform: translateY(-5px);
+  border-color: var(--warna-aksen);
+  box-shadow: 0 8px 24px #2f81f722;
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.repo-judul {
+  color: var(--warna-aksen);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.repo-judul:hover {
+  text-decoration: underline;
+}
+
+.label-public {
+  font-size: 11px;
+  color: var(--teks-sekunder);
+  border: 1px solid var(--garis-tepi);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.repo-deskripsi {
+  font-size: 12px;
+  color: var(--teks-sekunder);
+  margin-bottom: 16px;
+}
+
+.repo-footer {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--teks-sekunder);
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.dot-js { background-color: #f1e05a; }
+.dot-html { background-color: #e34c26; }
+.dot-css { background-color: #563d7c; }
+
+/* Kotak Grafik Kontribusi */
+.kotak-kontribusi {
+  border: 1px solid var(--garis-tepi);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.grid-kontribusi {
+  display: grid;
+  grid-template-columns: repeat(26, 1fr);
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.kotak {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background-color: #161b22;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.kotak:hover {
+  transform: scale(1.35);
+  outline: 1px solid #ffffff88;
+}
+
+.lv-0 { background-color: #161b22; }
+.lv-1 { background-color: var(--hijau-1); }
+.lv-2 { background-color: var(--hijau-2); }
+.lv-3 { background-color: var(--hijau-3); }
+
+.legenda-kontribusi {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--teks-sekunder);
+}
+
+.legenda-kontribusi .kotak {
+  width: 11px;
+  height: 11px;
+}
+
+/* =========================================
+   KUMPULAN KEYFRAMES ANIMASI
+   ========================================= */
+
+/* 1. Animasi Avatar Mengambang */
+@keyframes melayang {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 2. Animasi Halaman Muncul dari Bawah */
+@keyframes munculHalus {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsif Layar HP */
+@media (max-width: 768px) {
+  .container, .grid-repo {
+    grid-template-columns: 1fr;
+  }
+  .avatar-besar {
+    width: 120px;
+    height: 120px;
+    font-size: 32px;
+  }
+  .grid-kontribusi {
+    grid-template-columns: repeat(13, 1fr);
+  }
+}

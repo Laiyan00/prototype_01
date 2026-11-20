@@ -1,0 +1,161 @@
+:root {
+  --bg-dasar: #0d1117;
+  --bg-kartu: #161b22;
+  --bg-nav: #010409;
+  --garis-tepi: #30363d;
+  --teks-utama: #e6edf3;
+  --teks-sekunder: #8b949e;
+  --warna-aksen: #2f81f7;
+  --teks-tombol: #ffffff;
+}
+
+/* Tema Terang (Light Mode) */
+[data-theme="light"] {
+  --bg-dasar: #ffffff;
+  --bg-kartu: #f6f8fa;
+  --bg-nav: #f6f8fa;
+  --garis-tepi: #d0d7de;
+  --teks-utama: #1f2328;
+  --teks-sekunder: #656d76;
+  --warna-aksen: #0969da;
+  --teks-tombol: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Nonfungsional: Aksesibilitas Fokus Keyboard */
+:focus-visible {
+  outline: 2px solid var(--warna-aksen);
+  outline-offset: 2px;
+}
+
+body {
+  background-color: var(--bg-dasar);
+  color: var(--teks-utama);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navbar {
+  background-color: var(--bg-nav);
+  border-bottom: 1px solid var(--garis-tepi);
+  padding: 14px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-kiri, .nav-kanan { display: flex; align-items: center; gap: 14px; }
+.nav-kanan a { color: var(--teks-utama); text-decoration: none; font-size: 14px; font-weight: 500; }
+.logo-gh { background: var(--teks-utama); color: var(--bg-dasar); padding: 3px 8px; border-radius: 50%; font-weight: 700; font-size: 12px; }
+
+.btn-alat {
+  background: var(--bg-kartu);
+  color: var(--teks-utama);
+  border: 1px solid var(--garis-tepi);
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 32px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+}
+
+.avatar-besar {
+  width: 220px; height: 220px; border-radius: 50%;
+  background: linear-gradient(135deg, #1b1146, var(--warna-aksen));
+  display: grid; place-items: center;
+  font-size: 52px; font-weight: 700; color: #fff;
+  margin-bottom: 16px;
+}
+
+.nama-lengkap { font-size: 24px; }
+.username { color: var(--teks-sekunder); font-size: 15px; margin-bottom: 12px; }
+.bio { font-size: 14px; margin-bottom: 18px; }
+
+.aksi-profil { display: flex; gap: 8px; }
+.btn-utama, .btn-sekunder {
+  flex: 1; text-align: center; padding: 8px 14px;
+  border-radius: 6px; font-size: 13px; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: 1px solid transparent;
+}
+.btn-utama { background: var(--warna-aksen); color: var(--teks-tombol); }
+.btn-sekunder { background: var(--bg-kartu); color: var(--teks-utama); border-color: var(--garis-tepi); }
+
+.batas-garis { height: 1px; background: var(--garis-tepi); margin: 20px 0; }
+.github-stats { font-size: 13px; color: var(--teks-sekunder); }
+
+.blok-section { margin-bottom: 40px; }
+.judul-section { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.judul-section h2 { font-size: 18px; }
+
+.grup-filter { display: flex; gap: 6px; }
+.filter-btn {
+  background: var(--bg-kartu); color: var(--teks-sekunder);
+  border: 1px solid var(--garis-tepi); padding: 5px 12px;
+  border-radius: 99px; font-size: 12px; cursor: pointer;
+}
+.filter-btn.aktif { background: var(--warna-aksen); color: #fff; border-color: var(--warna-aksen); }
+
+.grid-repo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.kartu-repo {
+  background: var(--bg-kartu); border: 1px solid var(--garis-tepi);
+  border-radius: 8px; padding: 18px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  cursor: pointer; transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.kartu-repo:hover { transform: translateY(-2px); border-color: var(--warna-aksen); }
+.repo-judul { color: var(--warna-aksen); font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+.repo-deskripsi { font-size: 13px; color: var(--teks-sekunder); margin-bottom: 14px; }
+.repo-meta { font-size: 12px; color: var(--teks-sekunder); display: flex; justify-content: space-between; }
+
+/* Formulir Kontak */
+.form-kontak { background: var(--bg-kartu); border: 1px solid var(--garis-tepi); padding: 20px; border-radius: 8px; margin-top: 12px; }
+.baris-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grup-input { margin-bottom: 14px; }
+.grup-input label { display: block; font-size: 13px; margin-bottom: 6px; font-weight: 500; }
+.grup-input input, .grup-input textarea {
+  width: 100%; padding: 10px; border-radius: 6px;
+  border: 1px solid var(--garis-tepi); background: var(--bg-dasar);
+  color: var(--teks-utama); font-family: inherit; font-size: 14px;
+}
+.hidden-trap { display: none !important; }
+.status-form { margin-top: 10px; font-size: 13px; font-weight: 500; }
+
+/* Modal & Command Palette */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7);
+  display: grid; place-items: center; padding: 16px; z-index: 50;
+}
+.modal-overlay[hidden] { display: none; }
+.modal-kotak, .cmd-kotak {
+  background: var(--bg-kartu); border: 1px solid var(--garis-tepi);
+  border-radius: 10px; width: 100%; max-width: 520px; padding: 24px;
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.btn-tutup { background: none; border: none; color: var(--teks-utama); font-size: 24px; cursor: pointer; }
+.modal-isi { font-size: 14px; color: var(--teks-sekunder); margin-bottom: 14px; }
+.modal-arsitektur { background: var(--bg-dasar); padding: 12px; border-radius: 6px; font-size: 13px; margin-bottom: 18px; }
+.modal-footer { display: flex; gap: 10px; }
+
+.cmd-kotak { padding: 12px; }
+.cmd-kotak input { width: 100%; padding: 10px; background: var(--bg-dasar); border: 1px solid var(--garis-tepi); color: var(--teks-utama); border-radius: 6px; margin-bottom: 8px; }
+.cmd-list { list-style: none; }
+.cmd-list li { padding: 10px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.cmd-list li:hover { background: var(--warna-aksen); color: #fff; }
+
+@media (max-width: 768px) {
+  .container, .grid-repo, .baris-form { grid-template-columns: 1fr; }
+  .avatar-besar { width: 120px; height: 120px; font-size: 32px; }
+}

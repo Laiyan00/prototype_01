@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nama Kamu - Portofolio GitHub Style</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="B5.css">
+
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-kiri">
+      <span class="logo-gh">&lt;/&gt;</span>
+      <span class="nav-nama">namakamu / <strong>portofolio</strong></span>
+    </div>
+    <nav class="nav-kanan">
+      <a href="#proyek">Repositori</a>
+      <a href="#aktivitas">Kontribusi</a>
+      <button id="tombolTema" class="btn-kecil">Ubah Aksen</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar-profil">
+      <div class="avatar-besar">&lt;/&gt;</div>
+      <h1 class="nama-lengkap">Nama Kamu</h1>
+      <p class="username">@namakamu · calon programmer</p>
+      <p class="bio">Sedang mendalami pengembangan web frontend (HTML, CSS, JS) dan membangun proyek-proyek kecil setiap minggu.</p>
+      <a href="mailto:email@example.com" class="btn-follow">Hubungi Saya</a>
+      <div class="info-tambahan">
+        <div>📍 Magetan, Indonesia</div>
+        <div>💻 Fokus: Web Development</div>
+      </div>
+      <div class="batas-garis"></div>
+      <h3>Keahlian</h3>
+      <div class="daftar-badge">
+        <span class="badge">HTML5</span>
+        <span class="badge">CSS3</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">Git</span>
+      </div>
+    </aside>
+
+    <main class="konten-utama">
+      <section id="proyek" class="blok-section">
+        <div class="judul-section">
+          <h2>Proyek Unggulan (Pinned)</h2>
+          <span class="sub-judul">4 repositori</span>
+        </div>
+        <div class="grid-repo">
+          <article class="kartu-repo">
+            <div class="repo-header">
+              <a href="A3.html" class="repo-judul">kartu-profil-interaktif</a>
+              <span class="label-public">Public</span>
+            </div>
+            <p class="repo-deskripsi">Kartu profil digital dengan animasi melayang dan pergantian tema dinamis.</p>
+            <div class="repo-footer">
+              <span class="bahasa"><i class="dot dot-js"></i> JavaScript</span>
+              <span>⭐ 12</span>
+            </div>
+          </article>
+          <article class="kartu-repo">
+            <div class="repo-header">
+              <a href="A2.html" class="repo-judul">portofolio-universal</a>
+              <span class="label-public">Public</span>
+            </div>
+            <p class="repo-deskripsi">Portofolio lengkap dengan filter proyek, modal studi kasus, dan Command Palette.</p>
+            <div class="repo-footer">
+              <span class="bahasa"><i class="dot dot-html"></i> HTML/CSS</span>
+              <span>⭐ 8</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="aktivitas" class="blok-section">
+        <div class="judul-section">
+          <h2>Aktivitas Belajar Coding</h2>
+          <span class="sub-judul" id="infoKotak">Arahkan kursor ke kotak hijau</span>
+        </div>
+        <div class="kotak-kontribusi">
+          <div id="gridKontribusi" class="grid-kontribusi"></div>
+          <div class="legenda-kontribusi">
+            <span>Sedikit</span>
+            <i class="kotak lv-0"></i>
+            <i class="kotak lv-1"></i>
+            <i class="kotak lv-2"></i>
+            <i class="kotak lv-3"></i>
+            <span>Banyak</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="C1.js"></script>
+</body>
+</html>

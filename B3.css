@@ -1,0 +1,161 @@
+/* Palet Warna Ungu & Biru Toska */
+:root {
+  --ungu-gelap: #1e1136;
+  --ungu-terang: #8b5cf6;
+  --toska-cerah: #2dd4bf;
+  --toska-gelap: #0f766e;
+  --latar-halaman: #0a0814;
+}
+
+/* Mode terbalik saat tombol diklik */
+body.tukar-warna {
+  --ungu-terang: #2dd4bf;
+  --toska-cerah: #a855f7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--latar-halaman);
+  /* Cahaya latar lembut perpaduan ungu dan toska */
+  background-image: 
+    radial-gradient(circle at 25% 25%, #8b5cf622 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, #2dd4bf22 0%, transparent 50%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+/* Desain Utama Kartu */
+.kartu {
+  width: 300px;
+  background: linear-gradient(145deg, #1d1438, #111c2b);
+  padding: 38px 30px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid #8b5cf655;
+  /* Bayangan ganda: ungu di kiri atas, toska di kanan bawah */
+  box-shadow: 
+    -10px -10px 35px #8b5cf633,
+    10px 10px 35px #2dd4bf33;
+  animation: melayang 3.5s ease-in-out infinite;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Efek saat kursor menyentuh kartu */
+.kartu:hover {
+  border-color: var(--toska-cerah);
+  box-shadow: 
+    -12px -12px 45px #8b5cf655,
+    12px 12px 45px #2dd4bf55;
+}
+
+/* Avatar Lingkaran Gradasi */
+.foto {
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--ungu-terang), var(--toska-cerah));
+  color: #090d16;
+  box-shadow: 0 0 25px #2dd4bf55;
+  transition: transform 0.3s ease;
+}
+
+.kartu:hover .foto {
+  transform: scale(1.06) rotate(5deg);
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+p {
+  margin: 6px 0 22px;
+  color: #a5b4fc;
+  font-size: 14px;
+}
+
+/* Lencana Skill */
+.keahlian {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.keahlian span {
+  padding: 6px 14px;
+  border-radius: 99px;
+  background-color: #8b5cf622;
+  border: 1px solid #8b5cf644;
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.keahlian span:hover {
+  background-color: var(--toska-cerah);
+  border-color: var(--toska-cerah);
+  color: #062020;
+  transform: translateY(-3px);
+}
+
+/* Kotak Info Dinamis */
+.info-skill {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 14px;
+  background-color: #0b0f1c99;
+  border: 1px solid #2dd4bf22;
+  font-size: 12px;
+  color: #cbd5e1;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tombol Gradasi Ungu ke Toska */
+.btn-aksi {
+  margin-top: 20px;
+  width: 100%;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--ungu-terang), var(--toska-cerah));
+  color: #070b14;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-aksi:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #2dd4bf66;
+}
+
+/* Animasi Mengambang */
+@keyframes melayang {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}

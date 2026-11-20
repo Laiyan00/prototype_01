@@ -1,0 +1,140 @@
+/* 1. Palet Variabel Warna Ungu & Biru Toska */
+:root {
+  --latar-utama: #090714;
+  --kartu-atas: #1e133d;
+  --kartu-bawah: #0d1f2d;
+  --ungu-neon: #8b5cf6;
+  --toska-neon: #2dd4bf;
+  --teks-utama: #ffffff;
+  --teks-redup: #a5b4fc;
+}
+
+/* Tema Terbalik (saat tombol diklik) */
+body.tukar-warna {
+  --ungu-neon: #2dd4bf;
+  --toska-neon: #a855f7;
+}
+
+/* 2. Warna Latar Belakang Halaman */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--latar-utama);
+  background-image: 
+    radial-gradient(circle at 20% 20%, #8b5cf633 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, #2dd4bf33 0%, transparent 45%);
+  color: var(--teks-utama);
+  font-family: 'Inter', sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+/* 3. Warna Gradasi & Cahaya Kartu */
+.kartu {
+  width: 300px;
+  padding: 36px 28px;
+  border-radius: 24px;
+  text-align: center;
+  background: linear-gradient(145deg, var(--kartu-atas), var(--kartu-bawah));
+  border: 1px solid #8b5cf666;
+  box-shadow: 
+    -12px -12px 35px #8b5cf633,
+    12px 12px 35px #2dd4bf33;
+  animation: melayang 3.5s ease-in-out infinite;
+}
+
+/* 4. Warna Lingkaran Avatar */
+.foto {
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--ungu-neon), var(--toska-neon));
+  color: #090714;
+  box-shadow: 0 0 25px #2dd4bf66;
+}
+
+/* 5. Warna Teks Judul & Subjudul */
+h1 {
+  margin: 0;
+  font-size: 24px;
+  background: linear-gradient(90deg, #ffffff, var(--toska-neon));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  margin: 6px 0 22px;
+  color: var(--teks-redup);
+  font-size: 14px;
+}
+
+/* 6. Warna Lencana Skill */
+.keahlian {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.keahlian span {
+  padding: 6px 14px;
+  border-radius: 99px;
+  background-color: #8b5cf626;
+  border: 1px solid #8b5cf655;
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.keahlian span:hover {
+  background-color: var(--toska-neon);
+  border-color: var(--toska-neon);
+  color: #062020;
+  transform: translateY(-3px);
+}
+
+/* 7. Warna Kotak Keterangan & Tombol Utama */
+.info-skill {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #09071488;
+  border: 1px solid #2dd4bf33;
+  color: #cbd5e1;
+  font-size: 12px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-aksi {
+  margin-top: 18px;
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--ungu-neon), var(--toska-neon));
+  color: #090714;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-aksi:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #2dd4bf77;
+}
+
+/* Animasi Mengambang */
+@keyframes melayang {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}

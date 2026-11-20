@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Resmi - Web Developer & Programmer">
+  <title>Nama Kamu — Portofolio Digital</title>
+  
+  <!-- Font Inter dari Google Fonts -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Menghubungkan CSS Desain (B6) dan CSS Animasi (B7) -->
+  <link rel="stylesheet" href="B6.css">
+  <link rel="stylesheet" href="B7.css">
+</head>
+<body>
+
+  <!-- NAVBAR ATAS -->
+  <header class="navbar anim-turun">
+    <div class="nav-kiri">
+      <span class="logo-gh anim-putar">&lt;/&gt;</span>
+      <span class="nav-nama">namakamu / <strong>portofolio</strong></span>
+    </div>
+    <nav class="nav-kanan">
+      <a href="#proyek" data-i18n="nav_projects">Proyek</a>
+      <a href="#aktivitas" data-i18n="nav_activity">Aktivitas</a>
+      <a href="#kontak" data-i18n="nav_contact">Kontak</a>
+      <button id="btnCmd" class="btn-alat" title="Pencarian Cepat">🔍 <kbd>Ctrl+K</kbd></button>
+      <button id="btnLang" class="btn-alat" title="Ganti Bahasa">ID / EN</button>
+      <button id="btnTheme" class="btn-alat" title="Tukar Dominasi Warna">🌓</button>
+    </nav>
+  </header>
+
+  <!-- TATA LETAK UTAMA 2 KOLOM -->
+  <div class="container">
+    
+    <!-- KOLOM KIRI: PROFIL DIRI -->
+    <aside class="sidebar-profil anim-muncul">
+      <div class="avatar-besar anim-melayang">&lt;/&gt;</div>
+      <h1 class="nama-lengkap">Nama Kamu</h1>
+      <p class="username">@namakamu · Web Developer</p>
+      
+      <p class="bio" data-i18n="bio_text">
+        Membangun aplikasi web yang interaktif, cepat, dan modern dari Magetan, Indonesia.
+      </p>
+
+      <div class="aksi-profil">
+        <a href="#kontak" class="btn-utama" data-i18n="btn_hire">Hubungi Saya</a>
+        <a href="A1.html" class="btn-sekunder" data-i18n="btn_archive">Arsip v1</a>
+      </div>
+
+      <div class="batas-garis"></div>
+
+      <div class="info-tambahan">
+        <div>📍 Magetan, Jawa Timur</div>
+        <div>💻 Fokus: Frontend & UI Engineering</div>
+        <div id="githubStats" class="github-stats">⏳ Memuat data GitHub...</div>
+      </div>
+
+      <div class="batas-garis"></div>
+
+      <h3 data-i18n="sec_skills">Keahlian Utama</h3>
+      <div class="daftar-badge">
+        <span class="badge">HTML5</span>
+        <span class="badge">CSS3</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">Git</span>
+        <span class="badge">Responsive UI</span>
+      </div>
+    </aside>
+
+    <!-- KOLOM KANAN: PROYEK, AKTIVITAS & KONTAK -->
+    <main class="konten-utama">
+      
+      <!-- 1. BAGIAN PROYEK & FILTER -->
+      <section id="proyek" class="blok-section anim-muncul">
+        <div class="judul-section">
+          <h2 data-i18n="sec_projects">Proyek & Studi Kasus</h2>
+          <div class="grup-filter">
+            <button class="filter-btn aktif" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+            <button class="filter-btn" data-filter="Fullstack">Fullstack</button>
+            <button class="filter-btn" data-filter="UI/UX">UI/UX</button>
+          </div>
+        </div>
+
+        <div id="gridProyek" class="grid-repo"></div>
+      </section>
+
+      <!-- 2. BAGIAN GRAFIK AKTIVITAS BELAJAR -->
+      <section id="aktivitas" class="blok-section anim-muncul">
+        <div class="judul-section">
+          <h2 data-i18n="sec_activity">Aktivitas Belajar Coding</h2>
+          <span class="sub-judul" id="infoKotak">Arahkan kursor ke kotak aktivitas</span>
+        </div>
+        
+        <div class="kotak-kontribusi">
+          <div id="gridKontribusi" class="grid-kontribusi"></div>
+          <div class="legenda-kontribusi">
+            <span>Sedikit</span>
+            <i class="kotak lv-0"></i>
+            <i class="kotak lv-1"></i>
+            <i class="kotak lv-2"></i>
+            <i class="kotak lv-3"></i>
+            <span>Banyak</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. BAGIAN FORMULIR KONTAK LANGSUNG -->
+      <section id="kontak" class="blok-section anim-muncul">
+        <div class="judul-section">
+          <h2 data-i18n="sec_contact">Kirim Pesan Langsung</h2>
+          <span class="sub-judul">Terhubung ke Email & WhatsApp</span>
+        </div>
+
+        <form id="formKontak" class="form-kontak">
+          <div class="baris-form">
+            <div class="grup-input">
+              <label for="namaPengirim" data-i18n="lbl_name">Nama Anda</label>
+              <input type="text" id="namaPengirim" required placeholder="Budi Santoso">
+            </div>
+            <div class="grup-input">
+              <label for="emailPengirim" data-i18n="lbl_email">Email Anda</label>
+              <input type="email" id="emailPengirim" required placeholder="budi@example.com">
+            </div>
+          </div>
+
+          <div class="grup-input">
+            <label for="pesanPengirim" data-i18n="lbl_msg">Pesan Anda</label>
+            <textarea id="pesanPengirim" rows="3" required placeholder="Halo, saya tertarik bekerja sama untuk proyek web..."></textarea>
+          </div>
+
+          <div class="aksi-form">
+            <button type="submit" class="btn-utama" data-i18n="btn_send">Kirim via Email</button>
+            <button type="button" id="btnWa" class="btn-sekunder">Kirim via WhatsApp</button>
+          </div>
+          <p id="statusForm" class="status-form"></p>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Nama Kamu · Dibangun dengan HTML5, CSS3, dan JavaScript Murni.</p>
+  </footer>
+
+  <!-- MODAL DETAIL STUDI KASUS PROYEK -->
+  <div id="modalProyek" class="modal-overlay" hidden>
+    <div class="modal-kotak anim-zoom">
+      <div class="modal-header">
+        <h3 id="modalJudul">Judul Proyek</h3>
+        <button id="tutupModal" class="btn-tutup">&times;</button>
+      </div>
+      <p id="modalDeskripsi" class="modal-isi"></p>
+      <div class="modal-arsitektur">
+        <strong>Tantangan & Arsitektur Teknis:</strong>
+        <p id="modalTeknis"></p>
+      </div>
+      <div class="modal-footer">
+        <a id="modalDemo" href="#" target="_blank" class="btn-utama">Buka Live Demo</a>
+        <a id="modalRepo" href="#" target="_blank" class="btn-sekunder">Lihat Kode</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMAND PALETTE (Ctrl + K) -->
+  <div id="cmdPalette" class="modal-overlay" hidden>
+    <div class="cmd-kotak anim-zoom">
+      <input type="text" id="cmdInput" placeholder="Pilih navigasi cepat (tekan Esc untuk keluar)...">
+      <ul id="cmdList" class="cmd-list">
+        <li data-action="projects">📁 Lompat ke Daftar Proyek</li>
+        <li data-action="activity">🟩 Lompat ke Grafik Aktivitas</li>
+        <li data-action="contact">✉️ Lompat ke Formulir Kontak</li>
+        <li data-action="theme">🌓 Tukar Warna Tema (Ungu / Toska)</li>
+        <li data-action="lang">🌐 Ganti Bahasa (Indonesia / English)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Menghubungkan JavaScript (C4) -->
+  <script src="C4.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartu Profil - Ungu & Biru Toska</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="B5.css">
+
+</head>
+<body>
+
+  <main class="kartu" id="kartuProfil">
+    <div class="foto">&lt;/&gt;</div>
+    <h1>Nama Kamu</h1>
+    <p>calon programmer</p>
+    
+    <div class="keahlian">
+      <span onclick="tampilkanInfo('HTML5: Struktur utama dan kerangka semantik halaman web.')">HTML</span>
+      <span onclick="tampilkanInfo('CSS3: Desain gradasi ungu-toska, tata letak, dan animasi.')">CSS</span>
+      <span onclick="tampilkanInfo('JavaScript: Logika interaktif dan manipulasi elemen web.')">JS</span>
+    </div>
+
+    <div id="infoSkill" class="info-skill">Klik salah satu skill di atas!</div>
+    <button id="tombolTukar" class="btn-aksi">Tukar Arah Gradasi</button>
+  </main>
+
+  <script src="C3.js"></script>
+</body>
+</html>

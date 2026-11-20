@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nama Kamu — Portofolio Universal</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="B5.css">
+
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-kiri">
+      <span class="logo-gh">&lt;/&gt;</span>
+      <span class="nav-nama">namakamu / <strong>portofolio</strong></span>
+    </div>
+    <nav class="nav-kanan">
+      <a href="#proyek" data-i18n="nav_projects">Proyek</a>
+      <a href="#kontak" data-i18n="nav_contact">Kontak</a>
+      <button id="btnCmd" class="btn-alat">🔍 <kbd>Ctrl+K</kbd></button>
+      <button id="btnLang" class="btn-alat">ID / EN</button>
+      <button id="btnTheme" class="btn-alat">🌓</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar-profil">
+      <div class="avatar-besar">&lt;/&gt;</div>
+      <h1 class="nama-lengkap">Nama Kamu</h1>
+      <p class="username">@namakamu · Web Developer</p>
+      <p class="bio" data-i18n="bio_text">Membangun aplikasi web yang cepat, aksesibel, dan terukur dari Magetan, Indonesia.</p>
+      <div class="aksi-profil">
+        <a href="#kontak" class="btn-utama" data-i18n="btn_hire">Hubungi Saya</a>
+        <a href="A1.html" class="btn-sekunder">Versi GitHub</a>
+      </div>
+      <div class="batas-garis"></div>
+      <div class="github-stats" id="githubStats">Memuat statistik GitHub...</div>
+    </aside>
+
+    <main class="konten-utama">
+      <section id="proyek" class="blok-section">
+        <div class="judul-section">
+          <h2 data-i18n="sec_projects">Proyek & Studi Kasus</h2>
+          <div class="grup-filter">
+            <button class="filter-btn aktif" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+            <button class="filter-btn" data-filter="Fullstack">Fullstack</button>
+            <button class="filter-btn" data-filter="UI/UX">UI/UX</button>
+          </div>
+        </div>
+        <div id="gridProyek" class="grid-repo"></div>
+      </section>
+
+      <section id="kontak" class="blok-section">
+        <h2 data-i18n="sec_contact">Kirim Pesan Langsung</h2>
+        <form id="formKontak" class="form-kontak">
+          <input type="text" id="honeypot" class="hidden-trap" tabindex="-1">
+          <div class="baris-form">
+            <div class="grup-input">
+              <label for="namaPengirim" data-i18n="lbl_name">Nama Anda</label>
+              <input type="text" id="namaPengirim" required placeholder="Budi Santoso">
+            </div>
+            <div class="grup-input">
+              <label for="emailPengirim" data-i18n="lbl_email">Email Anda</label>
+              <input type="email" id="emailPengirim" required placeholder="budi@example.com">
+            </div>
+          </div>
+          <div class="grup-input">
+            <label for="pesanPengirim" data-i18n="lbl_msg">Pesan</label>
+            <textarea id="pesanPengirim" rows="4" required placeholder="Halo, saya tertarik mendiskusikan proyek..."></textarea>
+          </div>
+          <button type="submit" class="btn-utama" data-i18n="btn_send">Kirim Pesan</button>
+          <p id="statusForm" class="status-form"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div id="modalProyek" class="modal-overlay" hidden>
+    <div class="modal-kotak">
+      <div class="modal-header">
+        <h3 id="modalJudul">Judul Proyek</h3>
+        <button id="tutupModal" class="btn-tutup">&times;</button>
+      </div>
+      <p id="modalDeskripsi" class="modal-isi"></p>
+      <div class="modal-arsitektur">
+        <strong>Tantangan & Arsitektur Teknis:</strong>
+        <p id="modalTeknis"></p>
+      </div>
+      <div class="modal-footer">
+        <a id="modalDemo" href="#" target="_blank" class="btn-utama">Live Demo</a>
+        <a id="modalRepo" href="#" target="_blank" class="btn-sekunder">Kode GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="cmdPalette" class="modal-overlay" hidden>
+    <div class="cmd-kotak">
+      <input type="text" id="cmdInput" placeholder="Pilih perintah cepat (Esc untuk tutup)...">
+      <ul id="cmdList" class="cmd-list">
+        <li data-action="projects">📁 Lompat ke Daftar Proyek</li>
+        <li data-action="contact">✉️ Lompat ke Formulir Kontak</li>
+        <li data-action="theme">🌓 Ganti Tema (Dark / Light)</li>
+        <li data-action="lang">🌐 Ganti Bahasa (ID / EN)</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="C2.js"></script>
+</body>
+</html>
